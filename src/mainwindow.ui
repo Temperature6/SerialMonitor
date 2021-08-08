@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>503</width>
+    <height>392</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>串口监视器</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="picture.qrc">
+    <normaloff>:/pic/app_logo.png</normaloff>:/pic/app_logo.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLineEdit" name="message"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="Send_btn">
+          <property name="text">
+           <string>发送</string>
+          </property>
+          <property name="icon">
+           <iconset resource="picture.qrc">
+            <normaloff>:/pic/send.png</normaloff>:/pic/send.png</iconset>
+          </property>
+          <property name="shortcut">
+           <string>Return</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QTextBrowser" name="msg"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>串口</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="port_list"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="refrush">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="picture.qrc">
+            <normaloff>:/pic/refrush.png</normaloff>:/pic/refrush.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="isShowTime">
+          <property name="text">
+           <string>显示时间</string>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>波特率</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="BaudRate"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="clear">
+          <property name="text">
+           <string>清空输出</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>503</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>文件(&amp;F)</string>
+    </property>
+    <addaction name="operate_port"/>
+    <addaction name="save_msg"/>
+    <addaction name="separator"/>
+    <addaction name="exit"/>
+   </widget>
+   <addaction name="menu_F"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="save_msg">
+   <property name="icon">
+    <iconset resource="picture.qrc">
+     <normaloff>:/pic/save.png</normaloff>:/pic/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="exit">
+   <property name="icon">
+    <iconset resource="picture.qrc">
+     <normaloff>:/pic/exit.png</normaloff>:/pic/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="operate_port">
+   <property name="text">
+    <string>_</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="picture.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>exit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>200</x>
+     <y>154</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>msg</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>430</x>
+     <y>344</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>350</x>
+     <y>295</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
